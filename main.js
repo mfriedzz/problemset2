@@ -19,17 +19,31 @@ $(document).on('ready', function() {
 
 
 var allStrings = "How are you doing?";
+var result = [];
 
-var swapCase = allStrings.map.function (arg){
-	for (i=0; i<arg.length; i++){
-	if arg[i] === arg[i].toUppercase() {
-		arg[i].toLowercase();
-	} //if
-	//return arg.split("").
-	}
-};
+var swapCase = function (arg){
+	for (i=0; i<arg.length; i++) {
+			if (arg[i] === arg[i].toUpperCase()) {
+					result.push(arg[i].toLowerCase());
+					console.log("to Upper " + arg[i]);
+			} else if (arg[i] === arg[i].toLowerCase()) {
+				result.push(arg[i].toUpperCase()); 
+				console.log("to Upper " + arg[i]);
+			} else {
+					result.push(arg[i]);
+					console.log("got here 3");
+			} //else
+		}
+		return result.join(" ");
+	};
 	
-console.log("This string " + allStrings + " swapped case" +  swapCase(allStrings));
+
+	console.log(result);
+	swapCase(allStrings);
+	//var replaceCommas = result.replace(/,/g," ");
+	//console.log(replaceCommas);
+	console.log(result);
+		console.log("This string " + allStrings + " swapped case " + result);
 
 
 });
